@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ciy-gD-GL0">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Restaurants-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="mvp_template" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Restaurants" id="Mac-6p-GJ1"/>
+                    <connections>
+                        <segue destination="T3I-ya-AhG" kind="show" identifier="toRestaurantDetail" id="bLy-s4-nLn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1056.8" y="122.78860569715144"/>
+        </scene>
+        <!--Info-->
+        <scene sceneID="wpT-Wq-ikd">
+            <objects>
+                <viewController id="T3I-ya-AhG" customClass="RestaurantDetailViewController" customModule="mvp_template" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fPK-nC-oNz"/>
+                        <viewControllerLayoutGuide type="bottom" id="kuc-dH-PtO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="J9w-pZ-6cV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tFp-oq-Hsq">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="T3I-ya-AhG" id="XiG-Qv-hBo"/>
+                                    <outlet property="delegate" destination="T3I-ya-AhG" id="wWD-qH-mRB"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="tFp-oq-Hsq" secondAttribute="trailing" id="1Fr-pU-prB"/>
+                            <constraint firstItem="tFp-oq-Hsq" firstAttribute="leading" secondItem="J9w-pZ-6cV" secondAttribute="leading" id="BzZ-cE-mof"/>
+                            <constraint firstItem="tFp-oq-Hsq" firstAttribute="top" secondItem="J9w-pZ-6cV" secondAttribute="top" id="unG-b7-OYW"/>
+                            <constraint firstItem="kuc-dH-PtO" firstAttribute="top" secondItem="tFp-oq-Hsq" secondAttribute="bottom" id="w5a-Vb-3pV"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Info" id="lQE-Uc-7al"/>
+                    <connections>
+                        <outlet property="tableView" destination="tFp-oq-Hsq" id="L0g-IR-qaF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vbj-TF-Wtz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1741.5999999999999" y="122.78860569715144"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ORK-R5-pph">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ciy-gD-GL0" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="dPL-eq-sjA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="cph-vD-jD5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tzF-zY-gaD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="271" y="123"/>
+        </scene>
+    </scenes>
+</document>
